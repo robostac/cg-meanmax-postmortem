@@ -8,7 +8,9 @@ Once I saw the contest I decided I was going to try and compete with an AVX base
 
 Playing CSB with AVX is fairly simple - there are a fixed low number of pods and checkpoints. My implementation runs 8 different games in parallel, so you can try 8 different moves at once and evaluate them. This gave a speed up of 5-6x in CSB.
 
-I very quickly came to realise that AVX here would be much more complicated - there are a lot more objects and varying numbers per game (eg skill effects change depending on the moves used as does wrecks / tankers).  Quite often avx code can look very similar to standard code, but as soon as conditionals get involved it gets much more complicated. By the end I was getting 30-80K sims per turn - until Sunday my bot would only use 20 milliseconds per turn to make submits faster, but I changed it to 40 milliseconds for my final testing. There is still a lot of performance to be gained I feel, a lot of the features I added on top of my previous implementation weren't optimal (I quite often fell back into non vectorised code for handling skills).
+I very quickly came to realise that AVX here would be much more complicated - there are a lot more objects and varying numbers per game (eg skill effects change depending on the moves used as does wrecks / tankers).  Quite often avx code can look very similar to standard code, but as soon as conditionals get involved it gets much more complicated. 
+
+By the end I was getting 30-80K sims per turn - until Sunday my bot would only use 20 milliseconds per turn to make submits faster, but I changed it to 40 milliseconds for my final testing. There is still a lot of performance to be gained I feel, a lot of the features I added on top of my previous implementation weren't optimal (I quite often fell back into non vectorised code for handling skills).
 
 
 #### Getting to gold
