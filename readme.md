@@ -13,7 +13,7 @@ I very quickly came to realise that AVX here would be much more complicated - th
 
 #### Getting to gold
 
-As my simulation was going to take a lot of time to develop I submitted a basic heuristic bot in order to unlock all the rules / be able to test things against the top bots. This prioritised closest water / tankers / enemy reapers. This got me 300th in silver when gold opened, and adding oil got me into gold. Source for that is available [here](https://github.com/robostac/cg-meanmax-postmortem/meanmax.go) 
+As my simulation was going to take a lot of time to develop I submitted a basic heuristic bot in order to unlock all the rules / be able to test things against the top bots. This prioritised closest water / tankers / enemy reapers. This got me 300th in silver when gold opened, and adding oil got me into gold. Source for that is available [here](https://github.com/robostac/cg-meanmax-postmortem/blob/master/meanmax.go) 
 
 #### Simulation Testing
 
@@ -21,7 +21,7 @@ As I was concerned about the accuracy of simulations after porting it from java 
 
 Due to my usage of AVX my tester outputs 8 turns and then expects 8 responses - this let me check that each of the 8 simulated turns was kept entirely separate. I allowed off by one errors on velocity / position due to my usage of floats instead of doubles. I've never successfully managed to get skill_2.json to work as there is a turn with so many collisions the errors become unmanageable.
 
-My simulation tester (warning, horrible quickly written python) is available [here](https://github.com/robostac/cg-meanmax-postmortem/checksim.py), with some example test data in the [tests](https://github.com/robostac/cg-meanmax-postmortem/tests) directory.
+My simulation tester (warning, horrible quickly written python) is available [here](https://github.com/robostac/cg-meanmax-postmortem/blob/master/checksim.py), with some example test data in the [tests](https://github.com/robostac/cg-meanmax-postmortem/tree/master/tests) directory.
 
 #### Genetic Algorithm
 
